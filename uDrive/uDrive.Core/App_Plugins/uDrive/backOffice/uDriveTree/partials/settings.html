@@ -1,8 +1,10 @@
-﻿<div>
+﻿<div ng-controller="uDrive.SettingsController">
     <div class="umb-pane">
-        <umb-control-group label="Client ID" description="This is the client ID key from Google API">
-            <input type="text" placeholder="Client ID Key" />
-        </umb-control-group>
+        <div ng-repeat="setting in settings">
+            <umb-control-group label="{{ setting.Label }}" description="{{ setting.Description }}">
+                <input type="text" name="{{ setting.Key }}" id="{{ setting.Key }}" value="{{ setting.Value }}" />
+            </umb-control-group>
+        </div>
         <div class="umb-tab-buttons">
             <div class="btn-group">
                 <button type="submit" data-hotkey="ctrl+s" class="btn btn-success">

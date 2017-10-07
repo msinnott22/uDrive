@@ -300,6 +300,7 @@
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.htm" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
     <Content Include="App_Plugins\uDrive\backOffice\uDriveTree\controllers\edit.controller.js" />
+    <Content Include="App_Plugins\uDrive\backOffice\uDriveTree\controllers\settings.controller.js" />
     <Content Include="App_Plugins\uDrive\backOffice\uDriveTree\controllers\view.controller.js" />
     <Content Include="App_Plugins\uDrive\backOffice\uDriveTree\edit.html" />
     <Content Include="App_Plugins\uDrive\backOffice\uDriveTree\partials\settings.html" />

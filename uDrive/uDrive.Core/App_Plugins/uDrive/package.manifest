@@ -1,6 +1,8 @@
 ﻿{
 	javascript: [
 		 '~/App_Plugins/uDrive/backOffice/udriveTree/controllers/view.controller.js',
-		 '~/App_Plugins/uDrive/backOffice/udriveTree/controllers/edit.controller.js'
+		 '~/App_Plugins/uDrive/backOffice/udriveTree/controllers/edit.controller.js',
+		 '~/App_Plugins/uDrive/backOffice/udriveTree/controllers/settings.controller.js'
+
 	]
 }
