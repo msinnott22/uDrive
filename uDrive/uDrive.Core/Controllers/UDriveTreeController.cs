@@ -1,12 +1,14 @@
-﻿using System.Net.Http.Formatting;
+﻿using System.Collections.Generic;
+using System.Net.Http.Formatting;
 using uDrive.Core.Constants;
+using uDrive.Core.Models;
 using Umbraco.Web.Models.Trees;
 using Umbraco.Web.Mvc;
 using Umbraco.Web.Trees;
 
 namespace uDrive.Core.Controllers
 {
-    [umbraco.businesslogic.Tree(PackageConstants.SectionAlias, "test", "Testing")]
+    [Tree(PackageConstants.SectionAlias, "udriveTree", "uDrive")]
     [PluginController(PackageConstants.SectionName)]
     public class UDriveTreeController : TreeController
     {
@@ -16,7 +18,27 @@ namespace uDrive.Core.Controllers
 
             if (id == "-1")
             {
-                nodes.Add(CreateTreeNode("Test", id, queryStrings, "Item-Name", "icon-umb-media"));
+                var mainRoute = "/udrive/udriveTree";
+                var treeNodes = new List<SectionTreeNode>
+                {
+                    new SectionTreeNode()
+                    {
+                        Id = "settings",
+                        Title = "Settings",
+                        Icon = "icon-settings",
+                        Route = string.Format("{0}/edit/{1}", mainRoute, "settings")
+                    }
+                };
+
+                foreach (var treeNode in treeNodes)
+                {
+                    var nodeToAdd = CreateTreeNode(treeNode.Id, null, queryStrings, treeNode.Title, treeNode.Icon,
+                        false, treeNode.Route);
+
+                    nodes.Add(nodeToAdd);
+                }
+
+                return nodes;
             }
 
             return nodes;
