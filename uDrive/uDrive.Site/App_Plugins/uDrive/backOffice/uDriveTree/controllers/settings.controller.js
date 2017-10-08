@@ -1,11 +1,17 @@
 ﻿angular.module("umbraco").controller("uDrive.SettingsController",
-    function($scope, $http) {
+    function($scope, settingsResource, notificationService) {
 
-        $http.get("/umbraco/backoffice/uDrive/SettingsApi/GetAllSettings").success(
-            function (data) {
-                $scope.settings = data;
-            }
-        );
+        settingsResource.getAll().then(function(response) {
+            $scope.settings = response.data;
+        });
+
+        $scope.save = function(settings) {
+            settingsResource.save(settings).then(function(response) {
+                $scope.settings = response.data;
+
+                notificationService.success("Settings have been saved");
+            });
+        }
 
     }
 );
