@@ -78,6 +78,24 @@ namespace uDrive.Core.Controllers
             return settings;
         }
 
+        /// <summary>
+        /// Check to see if RefreshToken has a value & we have auth from Google
+        /// </summary>
+        /// <returns></returns>
+        public bool GetAuth()
+        {
+            var settingsXml = GetSettingsXmlDocument();
+
+            XmlNode refreshNode = settingsXml.SelectSingleNode("//uDrive/RefreshToken");
+
+            if (refreshNode != null)
+            {
+                return refreshNode.InnerText.Length > 0;
+            }
+
+            return false;
+        }
+
         #region Private Methods
 
         private XmlDocument GetSettingsXmlDocument()

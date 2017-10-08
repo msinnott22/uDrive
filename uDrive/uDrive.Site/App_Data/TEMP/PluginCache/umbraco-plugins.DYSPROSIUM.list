@@ -229,6 +229,8 @@ Our.Umbraco.NestedContent.Converters.SingleNestedContentValueConverter, Our.Umbr
 Our.Umbraco.NestedContent.Converters.NestedContentValueConverter, Our.Umbraco.NestedContent, Version=0.4.6286.19708, Culture=neutral, PublicKeyToken=null
 Our.Umbraco.NestedContent.PropertyEditors.NestedContentPropertyEditor, Our.Umbraco.NestedContent, Version=0.4.6286.19708, Culture=neutral, PublicKeyToken=null
 Our.Umbraco.NestedContent.Web.Controllers.NestedContentApiController, Our.Umbraco.NestedContent, Version=0.4.6286.19708, Culture=neutral, PublicKeyToken=null
+uDrive.Core.Controllers.GoogleDriveApiController, uDrive.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+uDrive.Core.Controllers.oAuthApiController, uDrive.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 uDrive.Core.Controllers.SettingsApiController, uDrive.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 uDrive.Core.Controllers.UDriveController, uDrive.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 uDrive.Core.Controllers.UDriveTreeController, uDrive.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -651,6 +653,8 @@ Umbraco.Web.Editors.MediaTypeController, umbraco, Version=1.0.6484.21648, Cultur
 Umbraco.Web.Editors.SectionController, umbraco, Version=1.0.6484.21648, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.Editors.MediaController, umbraco, Version=1.0.6484.21648, Culture=neutral, PublicKeyToken=null
 Our.Umbraco.NestedContent.Web.Controllers.NestedContentApiController, Our.Umbraco.NestedContent, Version=0.4.6286.19708, Culture=neutral, PublicKeyToken=null
+uDrive.Core.Controllers.GoogleDriveApiController, uDrive.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+uDrive.Core.Controllers.oAuthApiController, uDrive.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 uDrive.Core.Controllers.SettingsApiController, uDrive.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 uDrive.Core.Controllers.UDriveController, uDrive.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 uDrive.Core.Controllers.UDriveTreeController, uDrive.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
