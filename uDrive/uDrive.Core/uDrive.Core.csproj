@@ -130,9 +130,6 @@
     <Reference Include="Semver, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\semver.1.1.2\lib\net451\Semver.dll</HintPath>
     </Reference>
-    <Reference Include="Skybrud.Social, Version=0.9.6.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Skybrud.Social.0.9.6.0\lib\net40\Skybrud.Social.dll</HintPath>
-    </Reference>
     <Reference Include="SQLCE4Umbraco, Version=1.0.6484.21648, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Core.7.7.2\lib\net45\SQLCE4Umbraco.dll</HintPath>
     </Reference>
@@ -248,14 +245,13 @@
       <DependentUpon>OAuthCallback.aspx.cs</DependentUpon>
     </Compile>
     <Compile Include="Constants\PackageConstants.cs" />
-    <Compile Include="Controllers\AuthCallbackController.cs" />
-    <Compile Include="Controllers\GoogleDriveApiController.cs" />
     <Compile Include="Controllers\oAuthApiController.cs" />
     <Compile Include="Controllers\SettingsApiController.cs" />
     <Compile Include="Controllers\UDriveController.cs" />
     <Compile Include="Controllers\UDriveTreeController.cs" />
     <Compile Include="Helpers\TestData.cs" />
     <Compile Include="Helpers\UDriveConfig.cs" />
+    <Compile Include="Models\Google\Client.cs" />
     <Compile Include="Models\SectionTreeNode.cs" />
     <Compile Include="Models\Setting.cs" />
     <Compile Include="Models\TestModel.cs" />

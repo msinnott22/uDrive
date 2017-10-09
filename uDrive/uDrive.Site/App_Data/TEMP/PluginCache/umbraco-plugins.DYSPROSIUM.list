@@ -229,7 +229,6 @@ Our.Umbraco.NestedContent.Converters.SingleNestedContentValueConverter, Our.Umbr
 Our.Umbraco.NestedContent.Converters.NestedContentValueConverter, Our.Umbraco.NestedContent, Version=0.4.6286.19708, Culture=neutral, PublicKeyToken=null
 Our.Umbraco.NestedContent.PropertyEditors.NestedContentPropertyEditor, Our.Umbraco.NestedContent, Version=0.4.6286.19708, Culture=neutral, PublicKeyToken=null
 Our.Umbraco.NestedContent.Web.Controllers.NestedContentApiController, Our.Umbraco.NestedContent, Version=0.4.6286.19708, Culture=neutral, PublicKeyToken=null
-uDrive.Core.Controllers.GoogleDriveApiController, uDrive.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 uDrive.Core.Controllers.oAuthApiController, uDrive.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 uDrive.Core.Controllers.SettingsApiController, uDrive.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 uDrive.Core.Controllers.UDriveController, uDrive.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -653,7 +652,6 @@ Umbraco.Web.Editors.MediaTypeController, umbraco, Version=1.0.6484.21648, Cultur
 Umbraco.Web.Editors.SectionController, umbraco, Version=1.0.6484.21648, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.Editors.MediaController, umbraco, Version=1.0.6484.21648, Culture=neutral, PublicKeyToken=null
 Our.Umbraco.NestedContent.Web.Controllers.NestedContentApiController, Our.Umbraco.NestedContent, Version=0.4.6286.19708, Culture=neutral, PublicKeyToken=null
-uDrive.Core.Controllers.GoogleDriveApiController, uDrive.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 uDrive.Core.Controllers.oAuthApiController, uDrive.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 uDrive.Core.Controllers.SettingsApiController, uDrive.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 uDrive.Core.Controllers.UDriveController, uDrive.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -717,45 +715,6 @@ Our.Umbraco.NestedContent.PropertyEditors.NestedContentPropertyEditor, Our.Umbra
 Terratype.TerratypePropertyEditor, Terratype, Version=1.0.13.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Core.PropertyEditors.ParameterEditor, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
 Umbraco.Core.PropertyEditors.PropertyEditor, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
-
-Umbraco.Core.Deploy.IServiceConnector
-
-
-Umbraco.Core.Persistence.Mappers.BaseMapper
-Umbraco.Core.Persistence.Mappers.MapperForAttribute
-Umbraco.Core.Persistence.Mappers.AccessMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
-Umbraco.Core.Persistence.Mappers.DomainMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
-Umbraco.Core.Persistence.Mappers.ExternalLoginMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
-Umbraco.Core.Persistence.Mappers.MigrationEntryMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
-Umbraco.Core.Persistence.Mappers.UserGroupMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
-Umbraco.Core.Persistence.Mappers.TaskTypeMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
-Umbraco.Core.Persistence.Mappers.MemberGroupMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
-Umbraco.Core.Persistence.Mappers.TagMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
-Umbraco.Core.Persistence.Mappers.TemplateMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
-Umbraco.Core.Persistence.Mappers.MacroMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
-Umbraco.Core.Persistence.Mappers.MemberMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
-Umbraco.Core.Persistence.Mappers.MemberTypeMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
-Umbraco.Core.Persistence.Mappers.ContentMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
-Umbraco.Core.Persistence.Mappers.ContentTypeMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
-Umbraco.Core.Persistence.Mappers.DataTypeDefinitionMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
-Umbraco.Core.Persistence.Mappers.DictionaryMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
-Umbraco.Core.Persistence.Mappers.DictionaryTranslationMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
-Umbraco.Core.Persistence.Mappers.LanguageMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
-Umbraco.Core.Persistence.Mappers.MediaMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
-Umbraco.Core.Persistence.Mappers.MediaTypeMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
-Umbraco.Core.Persistence.Mappers.PropertyGroupMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
-Umbraco.Core.Persistence.Mappers.PropertyMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
-Umbraco.Core.Persistence.Mappers.PropertyTypeMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
-Umbraco.Core.Persistence.Mappers.RelationMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
-Umbraco.Core.Persistence.Mappers.RelationTypeMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
-Umbraco.Core.Persistence.Mappers.ServerRegistrationMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
-Umbraco.Core.Persistence.Mappers.UmbracoEntityMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
-Umbraco.Core.Persistence.Mappers.UserMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
-
-umbraco.cms.businesslogic.macro.IMacroEngine
-
-Umbraco.Web.Macros.PartialViewMacroEngine, umbraco, Version=1.0.6484.21648, Culture=neutral, PublicKeyToken=null
-umbraco.MacroEngines.RazorMacroEngine, umbraco.MacroEngines, Version=1.0.6484.21653, Culture=neutral, PublicKeyToken=null
 
 Umbraco.Web.Trees.TreeController
 Umbraco.Web.Trees.TreeAttribute
@@ -859,4 +818,35 @@ umbraco.loadPython, umbraco, Version=1.0.6484.21648, Culture=neutral, PublicKeyT
 umbraco.loadStylesheetProperty, umbraco, Version=1.0.6484.21648, Culture=neutral, PublicKeyToken=null
 umbraco.loadStylesheets, umbraco, Version=1.0.6484.21648, Culture=neutral, PublicKeyToken=null
 umbraco.loadXslt, umbraco, Version=1.0.6484.21648, Culture=neutral, PublicKeyToken=null
+
+Umbraco.Core.Persistence.Mappers.BaseMapper
+Umbraco.Core.Persistence.Mappers.MapperForAttribute
+Umbraco.Core.Persistence.Mappers.AccessMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
+Umbraco.Core.Persistence.Mappers.DomainMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
+Umbraco.Core.Persistence.Mappers.ExternalLoginMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
+Umbraco.Core.Persistence.Mappers.MigrationEntryMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
+Umbraco.Core.Persistence.Mappers.UserGroupMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
+Umbraco.Core.Persistence.Mappers.TaskTypeMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
+Umbraco.Core.Persistence.Mappers.MemberGroupMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
+Umbraco.Core.Persistence.Mappers.TagMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
+Umbraco.Core.Persistence.Mappers.TemplateMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
+Umbraco.Core.Persistence.Mappers.MacroMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
+Umbraco.Core.Persistence.Mappers.MemberMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
+Umbraco.Core.Persistence.Mappers.MemberTypeMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
+Umbraco.Core.Persistence.Mappers.ContentMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
+Umbraco.Core.Persistence.Mappers.ContentTypeMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
+Umbraco.Core.Persistence.Mappers.DataTypeDefinitionMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
+Umbraco.Core.Persistence.Mappers.DictionaryMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
+Umbraco.Core.Persistence.Mappers.DictionaryTranslationMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
+Umbraco.Core.Persistence.Mappers.LanguageMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
+Umbraco.Core.Persistence.Mappers.MediaMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
+Umbraco.Core.Persistence.Mappers.MediaTypeMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
+Umbraco.Core.Persistence.Mappers.PropertyGroupMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
+Umbraco.Core.Persistence.Mappers.PropertyMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
+Umbraco.Core.Persistence.Mappers.PropertyTypeMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
+Umbraco.Core.Persistence.Mappers.RelationMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
+Umbraco.Core.Persistence.Mappers.RelationTypeMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
+Umbraco.Core.Persistence.Mappers.ServerRegistrationMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
+Umbraco.Core.Persistence.Mappers.UmbracoEntityMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
+Umbraco.Core.Persistence.Mappers.UserMapper, Umbraco.Core, Version=1.0.6484.21641, Culture=neutral, PublicKeyToken=null
 

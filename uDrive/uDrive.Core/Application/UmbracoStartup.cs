@@ -1,4 +1,5 @@
-﻿using uDrive.Core.Constants;
+﻿using System;
+using uDrive.Core.Constants;
 using Umbraco.Core;
 using Umbraco.Core.Models;
 
@@ -9,12 +10,13 @@ namespace uDrive.Core.Application
         protected override void ApplicationStarted(UmbracoApplicationBase umbraco, ApplicationContext context)
         {
             Section section = context.Services.SectionService.GetByAlias(PackageConstants.SectionAlias);
-            if (section != null) return;
-
+            if (section != null)
+            {
+                return;
+            }
+            
             context.Services.SectionService.MakeNew(PackageConstants.SectionName, PackageConstants.SectionAlias,
-                PackageConstants.SectionIcon);
-
-            //TODO: Add Section For Users
+                PackageConstants.SectionIcon, sortOrder: 8);
         }
     }
 }

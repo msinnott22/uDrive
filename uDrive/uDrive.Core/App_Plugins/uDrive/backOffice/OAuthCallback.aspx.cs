@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Web;
 using System.Web.Security;
-using Skybrud.Social.Google;
 using uDrive.Core.Constants;
 using uDrive.Core.Helpers;
 using umbraco;
@@ -84,7 +83,7 @@ namespace uDrive.Core.App_Plugins.uDrive.backOffice {
             }
 
             // Initalize a new instance of the GoogleService class
-            GoogleService service = GoogleService.CreateFromRefreshToken(UDriveConfig.ClientId, UDriveConfig.ClientSecret, refreshToken);
+            //GoogleService service = GoogleService.CreateFromRefreshToken(UDriveConfig.ClientId, UDriveConfig.ClientSecret, refreshToken);
 
             try {
 

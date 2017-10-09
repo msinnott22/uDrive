@@ -1,16 +1,16 @@
 ﻿using System;
+using System.Collections.Specialized;
 using System.Web;
 using System.Web.Security;
-using Skybrud.Social.Google;
-using Skybrud.Social.Google.OAuth;
+using System.Web.UI;
 using uDrive.Core.Constants;
 using uDrive.Core.Helpers;
 using Umbraco.Core.Security;
-using Umbraco.Web.UI.Pages;
+using uDrive.Core.Models.Google;
 
 namespace uDrive.Core.App_Plugins.uDrive.backOffice
 {
-    public partial class OAuth : UmbracoEnsuredPage
+    public partial class OAuth : Page
     {
         /// <summary>
         /// Gets the current action from the query string.
@@ -50,7 +50,7 @@ namespace uDrive.Core.App_Plugins.uDrive.backOffice
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            GoogleOAuthClient client = new GoogleOAuthClient()
+            Client client = new Client()
             {
                 ClientId = UDriveConfig.ClientId,
                 ClientSecret = UDriveConfig.ClientSecret,
@@ -73,9 +73,9 @@ namespace uDrive.Core.App_Plugins.uDrive.backOffice
                 string state = Guid.NewGuid().ToString();
                 Session["uDrive_" + state] = redirect;
 
-                string url = client.GetAuthorizationUrl(state, string.Join(" ", scope), true);
+                string url = client.GetAuthorisationUrl(state, string.Join(" ", scope), true);
 
-                Response.Redirect(url);
+                Response.Redirect("");
             }
             else if (Error != null)
             {
@@ -111,26 +111,25 @@ namespace uDrive.Core.App_Plugins.uDrive.backOffice
                 // code can be used to acquire an access token (which has a lifetime of an hour),
                 // and since we requsted offline access, we also get a refresh token that can be
                 // used to acquire new access tokens.
-                GoogleAccessTokenResponse info = client.GetAccessTokenFromAuthorizationCode(Code);
+                //GoogleAccessTokenResponse info = client.GetAccessTokenFromAuthorizationCode(Code);
 
                 // If we previously have received a refresh token, and then try to autenticate the
                 // user again, the refresh token in the new response will be empty. Therefore the
                 // user must deauthenticate our application before continueing.
-                if (String.IsNullOrWhiteSpace(info.RefreshToken))
-                {
-                    Content.Text += (
-                        "<div class=\"error\">\n" +
-                        "No refresh token specified in response from the Google API. If you\n" +
-                        "have authenticated with this app before, try deauthorizing it HERE,\n" +
-                        "and then try again\n" +
-                        "</div>"
-                    );
-                    return;
-                }
+                //if (String.IsNullOrWhiteSpace(info.RefreshToken))
+                //{
+                //    Content.Text += (
+                //        "<div class=\"error\">\n" +
+                //        "No refresh token specified in response from the Google API. If you\n" +
+                //        "have authenticated with this app before, try deauthorizing it HERE,\n" +
+                //        "and then try again\n" +
+                //        "</div>"
+                //    );
+                //    return;
+                //}
 
                 // We're now ready to initialize an instance of the GoogleService class
-                GoogleService service =
-                    GoogleService.CreateFromRefreshToken(client.ClientId, client.ClientSecret, info.RefreshToken);
+                //GoogleService service = GoogleService.CreateFromRefreshToken(client.ClientId, client.ClientSecret, info.RefreshToken);
 
                 //// Get all accounts we have access to
                 //AnalyticsAccountsResponse accounts = service.Analytics.GetAccounts();
@@ -138,18 +137,23 @@ namespace uDrive.Core.App_Plugins.uDrive.backOffice
                 // Write information to the user
                 //Content.Text = "<div class=\"error\">" + (accounts.Items.Length == 0 ? "Noes! Seems you don't have access to any accounts." : "Yay! You have access to <b>" + accounts.Items.Length + "</b> accounts.") + "</div>";
 
-                Content.Text += "<p><b>Access Token</b> " + info.AccessToken + "</p>\n";
-                Content.Text += "<p><b>Refresh Token</b> " +
-                                (String.IsNullOrWhiteSpace(info.RefreshToken) ? "<em>N/A</em>" : info.RefreshToken) +
-                                "</p>\n";
+                //Content.Text += "<p><b>Access Token</b> " + info.AccessToken + "</p>\n";
+                //Content.Text += "<p><b>Refresh Token</b> " +
+                //               (String.IsNullOrWhiteSpace(info.RefreshToken) ? "<em>N/A</em>" : info.RefreshToken) +
+                //              "</p>\n";
 
-                UDriveConfig.RefreshToken = info.RefreshToken;
+                //UDriveConfig.RefreshToken = info.RefreshToken;
             }
             else
             {
-                Content.Text += "<a href=\"?do=login\" class=\"button\">Login with <b>Google Account</b></a>";
+                var nvc = new NameValueCollection
+                {
+                    {"clientcallback", Request.Url.AbsoluteUri.Replace("/OAuth.aspx", "/OAuthCallback.aspx")},
+                    {"clientstate", Guid.NewGuid().ToString()}
+                };
+
+                Content.Text += "<a href=\"?do=login&" + Client.NameValueCollectionToQueryString(nvc) + "\" class=\"button\">Login with <b>Google Account</b></a>";
             }
         }
     }
-
 }

@@ -9,9 +9,6 @@
             },
             save: function(settings) {
                 return $http.post("uDrive/SettingsApi/SaveAllSettings", angular.toJSON(settings));
-            },
-            getGoogleUser: function() {
-                return $http.get("uDrive/GoogleDriveApi/GetUser");
             }
         };
     }
