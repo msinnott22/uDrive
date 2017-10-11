@@ -2,13 +2,13 @@
     function($http) {
         return {
             checkAuth: function() {
-                return $http.get("uDrive/SettingsApi/GetAuth");
+                return $http.get("backoffice/uDrive/SettingsApi/GetAuth");
             },
             getAll: function() {
-                return $http.get("uDrive/SettingsApi/GetAllSettings");
+                return $http.get("backoffice/uDrive/SettingsApi/GetAllSettings");
             },
             save: function(settings) {
-                return $http.post("uDrive/SettingsApi/SaveAllSettings", angular.toJSON(settings));
+                return $http.post("backoffice/uDrive/SettingsApi/SaveAllSettings", angular.toJSON(settings));
             }
         };
     }

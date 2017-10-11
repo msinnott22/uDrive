@@ -13,7 +13,7 @@ namespace uDrive.Core.Helpers
     {
         public static string ConfigFilePath
         {
-            get { return HostingEnvironment.MapPath(PackageConstants.SettingsConfigPath); }
+            get { return PackageConstants.SettingsConfigPath; }
         }
 
         private static string GetSetting(string key)

@@ -1,32 +1,15 @@
 ﻿using System;
 using System.Linq;
-using System.Web;
-using System.Web.Security;
-using uDrive.Core.Constants;
 using uDrive.Core.Helpers;
 using umbraco;
 using umbraco.BusinessLogic;
-using Umbraco.Core.Security;
 using Umbraco.Web;
 using Umbraco.Web.UI.Pages;
 
 namespace uDrive.Core.App_Plugins.uDrive.backOffice {
 
-    public partial class OAuthCallback : UmbracoEnsuredPage {
-
-        protected override void OnPreInit(EventArgs e) {
-
-            base.OnPreInit(e);
-            
-            if (PackageConstants.UmbracoVersion != "7.2.2") return;
-
-            // Handle authentication stuff to counteract bug in Umbraco 7.2.2 (see U4-6342)
-            HttpContextWrapper http = new HttpContextWrapper(Context);
-            FormsAuthenticationTicket ticket = http.GetUmbracoAuthTicket();
-            http.AuthenticateCurrentRequest(ticket, true);
-        
-        }
-
+    public partial class OAuthCallback : UmbracoEnsuredPage
+    {
         protected void Page_Load(object sender, EventArgs e)
         {
             //Get current user

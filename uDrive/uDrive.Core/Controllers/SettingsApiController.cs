@@ -18,7 +18,7 @@ namespace uDrive.Core.Controllers
     [PluginController(PackageConstants.SectionName)]
     public class SettingsApiController : UmbracoAuthorizedApiController
     {
-        private readonly string _configPath = HostingEnvironment.MapPath(PackageConstants.SettingsConfigPath);
+        private readonly string _configPath = HostingEnvironment.MapPath("~/App_Plugins/uDrive/settings.config");
 
         /// <summary>
         /// Gets all settings from settings.config

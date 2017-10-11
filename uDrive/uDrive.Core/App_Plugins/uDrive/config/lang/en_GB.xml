@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<language alias="en-GB" intName="English (UK)" localName="English (UK)" lcid="" culture="en-GB">
+  <area alias="udrive">
+    <key alias="googleDriveForUmbraco">Google Drive for Umbraco</key>
+  </area>
+  <area alias="treeHeaders">
+    <key alias="udrive">uDrive</key>
+  </area>
+  <area alias="sections">
+    <key alias="udrive">uDrive</key>
+  </area>
+</language>
