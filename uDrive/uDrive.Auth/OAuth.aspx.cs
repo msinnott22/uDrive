@@ -65,8 +65,9 @@ namespace uDrive.Auth
                 // If the session value is null, the session has most likely expired
                 if (session == null)
                 {
-                    Content.Text += "<div class=\"error\">Session expired?</div>";
-                    return;
+                    Session.Add("uDrive_" + state, "");
+                    //Content.Text += "<div class=\"error\">Session expired?</div>";
+                    //return;
                 }
 
                 Session["uDrive_" + state] = redirect;

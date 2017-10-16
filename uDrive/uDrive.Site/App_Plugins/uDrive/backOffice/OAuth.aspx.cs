@@ -26,7 +26,7 @@ namespace uDrive.Core.App_Plugins.uDrive.backOffice
                 return;
             }
 
-            var callback = Request.Url.AbsoluteUri.Replace("/OAuth.aspx", "/OAuthCallback.aspx");
+            var callback = "http://localhost:63472/OAuth.aspx";
             var state = Guid.NewGuid().ToString();
 
             Session.Add("uDrive_" + state, "#h5yr");
