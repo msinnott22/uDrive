@@ -14,6 +14,7 @@
                 $scope.hasAuthd = hasUserAuthd;
             });
 
+
         });
 
         $scope.showAuth = true;

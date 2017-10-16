@@ -98,24 +98,6 @@ namespace uDrive.Core.App_Plugins.uDrive.backOffice {
                 GoogleService service =
                     GoogleService.CreateFromRefreshToken(client.ClientId, client.ClientSecret, info.Body.RefreshToken);
 
-                // Get all accounts we have access to
-                var userInfo = service.Client.GetUserInfo();
-                var drive = service.Drive.Files.GetFiles();
-
-
-                // Write information to the user
-                Content.Text += "<p><b>User Info</b>" + userInfo + "</p>\n";
-                Content.Text = "<div class=\"error\">" +
-                               (drive.Body.Files.Length == 0
-                                   ? "Noes! Seems you don't have access to any accounts."
-                                   : "Yay! You have access to <b>" + drive.Body.Files.Length + "</b> accounts.") +
-                               "</div>";
-                Content.Text += "<p><b>Access Token</b> " + info.Body.AccessToken + "</p>\n";
-                Content.Text += "<p><b>Refresh Token</b> " +
-                                (String.IsNullOrWhiteSpace(info.Body.RefreshToken)
-                                    ? "<em>N/A</em>"
-                                    : info.Body.RefreshToken) + "</p>\n";
-
                 // Get the refresh token from the query string (kinda bad practice though)
                 string refreshToken = info.Body.RefreshToken;
 
@@ -134,7 +116,6 @@ namespace uDrive.Core.App_Plugins.uDrive.backOffice {
 
                     //Set the refresh token in our config
                     UDriveConfig.RefreshToken = refreshToken;
-
 
                     //Ouput some info about the user
                     //Using UmbracoUser (obsolete) - somehow it fails to compile when using Security.CurrentUser

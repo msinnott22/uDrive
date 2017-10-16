@@ -254,6 +254,7 @@
       <DependentUpon>OAuthCallback.aspx.cs</DependentUpon>
     </Compile>
     <Compile Include="Constants\PackageConstants.cs" />
+    <Compile Include="Controllers\GoogleDriveApiController.cs" />
     <Compile Include="Controllers\oAuthApiController.cs" />
     <Compile Include="Controllers\SettingsApiController.cs" />
     <Compile Include="Controllers\UDriveController.cs" />
