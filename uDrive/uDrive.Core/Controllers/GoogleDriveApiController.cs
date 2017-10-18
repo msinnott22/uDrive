@@ -1,5 +1,7 @@
-﻿using Skybrud.Social.Google.Analytics.Objects.Accounts;
-using Skybrud.Social.Google.Common;
+﻿using Skybrud.Social.Google.Common;
+using Skybrud.Social.Google.Common.Responses;
+using Skybrud.Social.Google.Drive.Options.Files;
+using Skybrud.Social.Http;
 using uDrive.Core.Helpers;
 using Umbraco.Web.Mvc;
 using Umbraco.Web.WebApi;
@@ -16,13 +18,17 @@ namespace uDrive.Core.Controllers
         }
 
         /// <summary>
-        /// Get's Accounts on this authenticated user account
+        /// Get Drive User Info Response
         /// </summary>
         /// <returns></returns>
-        public AnalyticsAccount[] GetAccounts()
+        public GoogleGetUserInfoResponse GetDetails()
         {
-            // Get the accounts from the Google Analytics API
-            return new AnalyticsAccount[0];
+            return GetGoogleService().GetUserInfo();
+        }
+
+        public SocialHttpResponse GetFiles()
+        {
+            return GetGoogleService().Client.DoHttpGetRequest("https://www.googleapis.com/drive/v3/files", new DriveGetFilesOptions());
         }
     }
 }

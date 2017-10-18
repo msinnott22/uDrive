@@ -131,13 +131,16 @@
       <HintPath>..\packages\semver.1.1.2\lib\net451\Semver.dll</HintPath>
     </Reference>
     <Reference Include="Skybrud.Essentials, Version=1.0.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Skybrud.Essentials.1.0.8\lib\net45\Skybrud.Essentials.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Skybrud.Essentials.dll</HintPath>
     </Reference>
     <Reference Include="Skybrud.Social.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Skybrud.Social.Core.1.0.0-beta9\lib\net45\Skybrud.Social.Core.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Skybrud.Social.Core.dll</HintPath>
     </Reference>
     <Reference Include="Skybrud.Social.Google, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Skybrud.Social.Google.1.0.0-beta002\lib\net45\Skybrud.Social.Google.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Skybrud.Social.Google.dll</HintPath>
     </Reference>
     <Reference Include="SQLCE4Umbraco, Version=1.0.6484.21648, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Core.7.7.2\lib\net45\SQLCE4Umbraco.dll</HintPath>
@@ -257,7 +260,6 @@
     <Compile Include="Controllers\GoogleDriveApiController.cs" />
     <Compile Include="Controllers\oAuthApiController.cs" />
     <Compile Include="Controllers\SettingsApiController.cs" />
-    <Compile Include="Controllers\UDriveController.cs" />
     <Compile Include="Controllers\UDriveTreeController.cs" />
     <Compile Include="Helpers\TestData.cs" />
     <Compile Include="Helpers\UDriveConfig.cs" />
@@ -278,10 +280,13 @@
     <Content Include="App_Plugins\uDrive\backOffice\OAuth.aspx" />
     <Content Include="App_Plugins\uDrive\backOffice\OAuthCallback.aspx" />
     <Content Include="App_Plugins\uDrive\backOffice\uDriveTree\controllers\edit.controller.js" />
+    <Content Include="App_Plugins\uDrive\backOffice\uDriveTree\controllers\files.controller.js" />
     <Content Include="App_Plugins\uDrive\backOffice\uDriveTree\controllers\settings.controller.js" />
     <Content Include="App_Plugins\uDrive\backOffice\uDriveTree\controllers\view.controller.js" />
     <Content Include="App_Plugins\uDrive\backOffice\uDriveTree\edit.html" />
+    <Content Include="App_Plugins\uDrive\backOffice\uDriveTree\partials\files.html" />
     <Content Include="App_Plugins\uDrive\backOffice\uDriveTree\partials\settings.html" />
+    <Content Include="App_Plugins\uDrive\backOffice\uDriveTree\resources\files.resource.js" />
     <Content Include="App_Plugins\uDrive\backOffice\uDriveTree\resources\settings.resource.js" />
     <Content Include="App_Plugins\uDrive\backOffice\uDriveTree\view.html" />
     <Content Include="App_Plugins\uDrive\config\lang\en_GB.xml" />

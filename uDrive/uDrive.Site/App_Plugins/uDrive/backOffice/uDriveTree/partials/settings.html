@@ -1,33 +1,20 @@
 ﻿<div ng-controller="uDrive.SettingsController">
     <div class="umb-pane">
-        
-        <umb-control-group ng-hide="hasAuthd()" label="Authorisation" description="Login with Google via oAuth to verify">
-            <button class="btn btn-success" ng-click="auth()">Authorise</button>
-        </umb-control-group>
+        <h4>
+            <localize key="analytics_settings">Settings</localize>
+        </h4>
+        <div ng-hide="hasAuth">
+            <umb-control-group label="Authorisation" description="Login with Google via oAuth to verify">
+                <button class="btn btn-success" ng-click="auth()"><i class="icon-lock"></i> Authorise</button>
+            </umb-control-group>
+        </div>
+        <div ng-show="hasAuth">
+            <umb-control-group ng-repeat="setting in settings" label="{{ setting.Label }}" description="{{ setting.Description }}">
+                <input readonly="readonly" type="text" name="{{ setting.Key }}" id="{{ setting.Key }}" value="{{ setting.Value }}" ng-model="setting.Value"/>
+            </umb-control-group>
+        </div>
 
-        <umb-control-group ng-repeat="setting in settings" label="{{ setting.Label }}" description="{{ setting.Description }}">
-            <input type="text" name="{{ setting.Key }}" id="{{ setting.Key }}" value="{{ setting.Value }}" ng-model="setting.Value"/>
-        </umb-control-group>
-
-        <!--<umb-control-group label="Account" description="Select which account you wish to view settings from">
-            <select name="account" ng-model="account" ng-change="accountSelected(account)" ng-options="account.Name for account in accounts">
-                <option value="">-- Select an Account --</option>
-            </select>
-            <br/>
-            <select name="profile" ng-show="account" ng-model="profile" ng-options="profile.Name for profile in profiles">
-                <option value="">-- Select a Profile --</option>
-            </select>
-            <div ng-show="profile">
-                <hr />
-                <h4>Selected Profile</h4>
-                <h5>Name: {{ profile.Name }}</h5>
-                <h5>Website: {{ profile.WebsiteUrl }}</h5>
-                <h5>Id: {{ profile.Id }}</h5>
-                <h5>Web Property Id: {{ profile.WebPropertyId }}</h5>
-            </div>
-        </umb-control-group>-->
-
-        <div class="umb-tab-buttons">
+        <div class="umb-tab-buttons" ng-hide="hasAuth">
             <div class="btn-group">
                 <button ng-click="save(settings)" data-hotkey="ctrl+s" class="btn btn-success">
                     <localize key="buttons_save">Save</localize>

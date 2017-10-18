@@ -6,8 +6,14 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "uDrive.Core", "uDrive.Core\uDrive.Core.csproj", "{4494A9C8-FD4B-48CD-9103-42843A0D1B75}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "uDrive.Site", "uDrive.Site\uDrive.Site.csproj", "{E5425209-AEC9-420D-B14F-CDB9D40CE8D2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4494A9C8-FD4B-48CD-9103-42843A0D1B75} = {4494A9C8-FD4B-48CD-9103-42843A0D1B75}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "uDrive.Auth", "uDrive.Auth\uDrive.Auth.csproj", "{B5CDA2B5-5F51-4993-996A-08CD8919E954}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4494A9C8-FD4B-48CD-9103-42843A0D1B75} = {4494A9C8-FD4B-48CD-9103-42843A0D1B75}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -9,6 +9,9 @@
             },
             save: function(settings) {
                 return $http.post("backoffice/uDrive/SettingsApi/SaveAllSettings", angular.toJSON(settings));
+            },
+            getDetails: function() {
+                return $http.get("backoffice/uDrive/DriveApi/GetDetails");
             }
         };
     }

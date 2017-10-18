@@ -27,6 +27,13 @@ namespace uDrive.Core.Controllers
                         Title = "Settings",
                         Icon = "icon-settings",
                         Route = string.Format("{0}/edit/{1}", mainRoute, "settings")
+                    },
+                    new SectionTreeNode()
+                    {
+                        Id = "files",
+                        Title = "Files",
+                        Icon = "icon-files",
+                        Route = string.Format("{0}/edit/{1}", mainRoute, "files")
                     }
                 };
 
