@@ -264,6 +264,13 @@
     <Compile Include="Helpers\TestData.cs" />
     <Compile Include="Helpers\UDriveConfig.cs" />
     <Compile Include="Models\Google\Client.cs" />
+    <Compile Include="Models\Google\User\ExportFormats.cs" />
+    <Compile Include="Models\Google\User\ImportFormats.cs" />
+    <Compile Include="Models\Google\User\MaxImportSizes.cs" />
+    <Compile Include="Models\Google\User\StorageQuota.cs" />
+    <Compile Include="Models\Google\User\TeamDriveTheme.cs" />
+    <Compile Include="Models\Google\User\User.cs" />
+    <Compile Include="Models\Google\User\UserInfo.cs" />
     <Compile Include="Models\SectionTreeNode.cs" />
     <Compile Include="Models\Setting.cs" />
     <Compile Include="Models\TestModel.cs" />

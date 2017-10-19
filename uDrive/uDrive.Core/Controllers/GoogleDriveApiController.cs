@@ -1,8 +1,9 @@
-﻿using Skybrud.Social.Google.Common;
-using Skybrud.Social.Google.Common.Responses;
+﻿using Newtonsoft.Json;
+using Skybrud.Social.Google.Common;
 using Skybrud.Social.Google.Drive.Options.Files;
 using Skybrud.Social.Http;
 using uDrive.Core.Helpers;
+using uDrive.Core.Models.Google.User;
 using Umbraco.Web.Mvc;
 using Umbraco.Web.WebApi;
 
@@ -17,13 +18,12 @@ namespace uDrive.Core.Controllers
                 UDriveConfig.RefreshToken);
         }
 
-        /// <summary>
-        /// Get Drive User Info Response
-        /// </summary>
-        /// <returns></returns>
-        public GoogleGetUserInfoResponse GetDetails()
+        public User GetUserInfo()
         {
-            return GetGoogleService().GetUserInfo();
+            var response = GetGoogleService().Client.DoHttpGetRequest("https://www.googleapis.com/drive/v3/about?fields=kind%2Cuser");
+            var settings = new JsonSerializerSettings() {TypeNameHandling = TypeNameHandling.All};
+            var userInfo = JsonConvert.DeserializeObject<User>(response.Body, settings);
+            return userInfo;
         }
 
         public SocialHttpResponse GetFiles()
