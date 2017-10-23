@@ -22,8 +22,8 @@ namespace uDrive.Core.Controllers
         {
             var response = GetGoogleService().Client.DoHttpGetRequest("https://www.googleapis.com/drive/v3/about?fields=kind%2Cuser");
             var settings = new JsonSerializerSettings() {TypeNameHandling = TypeNameHandling.All};
-            var userInfo = JsonConvert.DeserializeObject<User>(response.Body, settings);
-            return userInfo;
+            var userInfo = JsonConvert.DeserializeObject<UserInfo>(response.Body, settings);
+            return userInfo.User;
         }
 
         public SocialHttpResponse GetFiles()

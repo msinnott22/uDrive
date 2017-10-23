@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Web.UI;
 using Skybrud.Social.Google.Common;
 using Skybrud.Social.Google.Common.OAuth;
@@ -38,9 +39,9 @@ namespace uDrive.Auth
         {
             GoogleOAuthClient client = new GoogleOAuthClient()
             {
-                ClientId = UDriveConfig.ClientId,
-                ClientSecret = UDriveConfig.ClientSecret,
-                RedirectUri = UDriveConfig.RedirectUri
+                ClientId = ConfigurationManager.AppSettings["ClientId"],
+                ClientSecret = ConfigurationManager.AppSettings["ClientSecret"],
+                RedirectUri = "http://udriveauth.azurewebsites.net"
             };
 
             var scope = new[]
@@ -95,7 +96,7 @@ namespace uDrive.Auth
             {
 
                 // Get the state from the query string
-                string state = Request.QueryString["state"];
+                string state = Request.QueryString["session_state"];
 
                 if (state == null)
                 {
@@ -110,7 +111,7 @@ namespace uDrive.Auth
                 if (session == null)
                 {
                     Content.Text += "<div class=\"error\">Session expired?</div>";
-                    return;
+                    //return;
                 }
 
                 // After a successful login, the user is redirected back to this page, and an
@@ -149,7 +150,7 @@ namespace uDrive.Auth
                 Content.Text += "<p><b>Access Token</b> " + info.Body.AccessToken + "</p>\n";
                 Content.Text += "<p><b>Refresh Token</b> " + (String.IsNullOrWhiteSpace(info.Body.RefreshToken) ? "<em>N/A</em>" : info.Body.RefreshToken) + "</p>\n";
 
-                UDriveConfig.RefreshToken = info.Body.RefreshToken;
+                //UDriveConfig.RefreshToken = info.Body.RefreshToken;
             }
             else
             {
