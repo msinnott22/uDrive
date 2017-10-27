@@ -26,7 +26,7 @@ namespace uDrive.Core.App_Plugins.uDrive.backOffice
                 return;
             }
 
-            var callback = "http://localhost:63472/OAuth.aspx";
+            var callback = "http://udrive.auth.co.uk/OAuth.aspx";
             var state = Guid.NewGuid().ToString();
 
             Session.Add("uDrive_" + state, "#h5yr");
@@ -39,7 +39,7 @@ namespace uDrive.Core.App_Plugins.uDrive.backOffice
                 {"lang", currentUser.Language}
             };
 
-            var oAuthUrl = "http://localhost:63472/OAuth.aspx?" + Client.NameValueCollectionToQueryString(query);
+            var oAuthUrl = "http://udrive.auth.co.uk/OAuth.aspx?" + Client.NameValueCollectionToQueryString(query);
 
             Response.Redirect(oAuthUrl);
         }

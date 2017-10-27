@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Specialized;
 using System.Configuration;
 using System.Web.UI;
+using Skybrud.Social;
 using Skybrud.Social.Google.Common;
 using Skybrud.Social.Google.Common.OAuth;
 using Skybrud.Social.Google.Common.Scopes;
@@ -41,7 +43,7 @@ namespace uDrive.Auth
             {
                 ClientId = ConfigurationManager.AppSettings["ClientId"],
                 ClientSecret = ConfigurationManager.AppSettings["ClientSecret"],
-                RedirectUri = "http://udriveauth.azurewebsites.net"
+                RedirectUri = "http://udrive.auth.co.uk"
             };
 
             var scope = new[]
@@ -136,19 +138,29 @@ namespace uDrive.Auth
                     return;
                 }
 
+                NameValueCollection nvc = new NameValueCollection
+                {
+                    {"clientstate", state},
+                    {"token", info.Body.RefreshToken}
+                };
+
+                var callbackUrl = "http://localhost:52323/App_Plugins/uDrive/backoffice/OAuthCallback.aspx?" + SocialUtils.Misc.NameValueCollectionToQueryString(nvc);
+
+                Response.Redirect(callbackUrl);
+
                 // We're now ready to initialize an instance of the GoogleService class
-                GoogleService service = GoogleService.CreateFromRefreshToken(client.ClientId, client.ClientSecret, info.Body.RefreshToken);
+                //GoogleService service = GoogleService.CreateFromRefreshToken(client.ClientId, client.ClientSecret, info.Body.RefreshToken);
 
                 // Get all accounts we have access to
-                var userInfo = service.Client.GetUserInfo();
-                var drive = service.Drive.Files.GetFiles();
-                
+                //var userInfo = service.Client.GetUserInfo();
+                //var drive = service.Drive.Files.GetFiles();
+
 
                 // Write information to the user
-                Content.Text += "<p><b>User Info</b>" + userInfo + "</p>\n";
-                Content.Text = "<div class=\"error\">" + (drive.Body.Files.Length == 0 ? "Noes! Seems you don't have access to any accounts." : "Yay! You have access to <b>" + drive.Body.Files.Length + "</b> accounts.") + "</div>";
-                Content.Text += "<p><b>Access Token</b> " + info.Body.AccessToken + "</p>\n";
-                Content.Text += "<p><b>Refresh Token</b> " + (String.IsNullOrWhiteSpace(info.Body.RefreshToken) ? "<em>N/A</em>" : info.Body.RefreshToken) + "</p>\n";
+                //Content.Text += "<p><b>User Info</b>" + userInfo + "</p>\n";
+                //Content.Text = "<div class=\"error\">" + (drive.Body.Files.Length == 0 ? "Noes! Seems you don't have access to any accounts." : "Yay! You have access to <b>" + drive.Body.Files.Length + "</b> accounts.") + "</div>";
+                //Content.Text += "<p><b>Access Token</b> " + info.Body.AccessToken + "</p>\n";
+                //Content.Text += "<p><b>Refresh Token</b> " + (String.IsNullOrWhiteSpace(info.Body.RefreshToken) ? "<em>N/A</em>" : info.Body.RefreshToken) + "</p>\n";
 
                 //UDriveConfig.RefreshToken = info.Body.RefreshToken;
             }
