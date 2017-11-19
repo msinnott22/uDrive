@@ -43,7 +43,7 @@ namespace uDrive.Auth
             {
                 ClientId = ConfigurationManager.AppSettings["ClientId"],
                 ClientSecret = ConfigurationManager.AppSettings["ClientSecret"],
-                RedirectUri = "http://udrive.auth.co.uk"
+                RedirectUri = "http://udriveauth.azurewebsites.net"
             };
 
             var scope = new[]
@@ -131,7 +131,7 @@ namespace uDrive.Auth
                     Content.Text += (
                         "<div class=\"error\">\n" +
                             "No refresh token specified in response from the Google API. If you\n" +
-                            "have authenticated with this app before, try deauthorizing it HERE,\n" +
+                            "have authenticated with this app before, try deauthorizing it <a href=\"https://myaccount.google.com/permissions \">Here</a>,\n" +
                             "and then try again\n" +
                         "</div>"
                     );
