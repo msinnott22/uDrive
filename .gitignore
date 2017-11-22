@@ -214,3 +214,11 @@ FakesAssemblies/
 **/*.Server/GeneratedArtifacts
 **/*.Server/ModelManifest.xml
 _Pvt_Extensions
+
+uDrive/uDrive\.Site/App_Data/Logs/
+
+uDrive/uDrive\.Site/App_Data/Models/
+
+uDrive/uDrive\.Site/App_Data/NuGetBackup/
+
+uDrive/uDrive\.Site/App_Data/TEMP/
