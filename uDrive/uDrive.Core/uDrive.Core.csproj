@@ -301,6 +301,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy "$(ProjectDir)App_Plugins\*.*" "$(SolutionDir)uDrive.Site/App_Plugins" /Y /E</PostBuildEvent>
+    <PostBuildEvent>xcopy "$(ProjectDir)App_Plugins\*.*" "$(SolutionDir)uDrive.Site/App_Plugins" /Y /E
+xcopy "$(TargetPath)" "$(SolutionDir)../libs" /Y /E</PostBuildEvent>
   </PropertyGroup>
 </Project>
