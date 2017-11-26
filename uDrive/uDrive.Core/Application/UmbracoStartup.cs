@@ -1,7 +1,11 @@
 ﻿using System;
+using System.Linq;
 using uDrive.Core.Constants;
+using uDrive.Core.Helpers;
+using umbraco.BusinessLogic;
+using umbraco.cms.businesslogic.packager;
 using Umbraco.Core;
-using Umbraco.Core.Models;
+using Umbraco.Web.Trees;
 
 namespace uDrive.Core.Application
 {
@@ -9,14 +13,40 @@ namespace uDrive.Core.Application
     {
         protected override void ApplicationStarted(UmbracoApplicationBase umbraco, ApplicationContext context)
         {
-            Section section = context.Services.SectionService.GetByAlias(PackageConstants.SectionAlias);
-            if (section != null)
+            //Add config setting for installation notification
+
+            var install = new InstallHelper();
+
+            install.AddTranslations();
+
+            install.AddSection(context);
+
+            InstalledPackage.BeforeDelete += InstalledPackage_BeforeDelete;
+        }
+
+        void InstalledPackage_BeforeDelete(InstalledPackage sender, EventArgs e)
+        {
+            if (sender.Data.Name == PackageConstants.SectionName)
             {
-                return;
+                var uninstall = new UninstallHelper();
+
+                uninstall.RemoveTranslations();
+                uninstall.RemoveSection();
             }
-            
-            context.Services.SectionService.MakeNew(PackageConstants.SectionName, PackageConstants.SectionAlias,
-                PackageConstants.SectionIcon, sortOrder: 8);
+        }
+
+        void TreeControllerBase_TreeNodesRendering(TreeControllerBase sender, TreeNodesRenderingEventArgs e)
+        {
+            var currentUser = User.GetCurrent();
+
+            if (sender.TreeAlias == PackageConstants.SectionAlias && !currentUser.IsAdmin())
+            {
+                var settingNode = e.Nodes.SingleOrDefault(x => x.Id.ToString() == "settings");
+                if (settingNode != null)
+                {
+                    e.Nodes.Remove(settingNode);
+                }
+            }
         }
     }
 }

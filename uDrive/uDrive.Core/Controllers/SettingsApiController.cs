@@ -18,7 +18,10 @@ namespace uDrive.Core.Controllers
     [PluginController(PackageConstants.SectionName)]
     public class SettingsApiController : UmbracoAuthorizedApiController
     {
-        private readonly string _configPath = HostingEnvironment.MapPath("~/App_Plugins/uDrive/settings.config");
+        public static string ConfigFilePath
+        {
+            get { return PackageConstants.SettingsConfigPath; }
+        }
 
         /// <summary>
         /// Gets all settings from settings.config
@@ -73,7 +76,7 @@ namespace uDrive.Core.Controllers
                 }
             }
 
-            settingsXml.Save(_configPath);
+            settingsXml.Save(ConfigFilePath);
 
             return settings;
         }
@@ -101,7 +104,7 @@ namespace uDrive.Core.Controllers
         private XmlDocument GetSettingsXmlDocument()
         {
             XmlDocument settingsXml = new XmlDocument();
-            settingsXml.Load(_configPath);
+            settingsXml.Load(ConfigFilePath);
             return settingsXml;
         }
 

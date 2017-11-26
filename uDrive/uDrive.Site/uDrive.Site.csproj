@@ -154,6 +154,15 @@
     <Reference Include="Semver, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\semver.1.1.2\lib\net451\Semver.dll</HintPath>
     </Reference>
+    <Reference Include="Skybrud.Essentials">
+      <HintPath>..\..\libs\Skybrud.Essentials.dll</HintPath>
+    </Reference>
+    <Reference Include="Skybrud.Social.Core">
+      <HintPath>..\..\libs\Skybrud.Social.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Skybrud.Social.Google">
+      <HintPath>..\..\libs\Skybrud.Social.Google.dll</HintPath>
+    </Reference>
     <Reference Include="SQLCE4Umbraco, Version=1.0.6484.21648, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Core.7.7.2\lib\net45\SQLCE4Umbraco.dll</HintPath>
     </Reference>
@@ -346,6 +355,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
+      <UserProperties BuildVersion_DetectChanges="False" BuildVersion_IncrementBeforeBuild="False" BuildVersion_ReplaceNonNumerics="False" BuildVersion_StartDate="2000/1/1" />
     </VisualStudio>
   </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

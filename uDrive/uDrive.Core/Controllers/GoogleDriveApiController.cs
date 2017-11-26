@@ -2,7 +2,9 @@
 using Skybrud.Social.Google.Common;
 using Skybrud.Social.Google.Drive.Options.Files;
 using Skybrud.Social.Http;
+using uDrive.Core.Constants;
 using uDrive.Core.Helpers;
+using uDrive.Core.Models.Google.Files;
 using uDrive.Core.Models.Google.User;
 using Umbraco.Web.Mvc;
 using Umbraco.Web.WebApi;
@@ -28,7 +30,14 @@ namespace uDrive.Core.Controllers
 
         public SocialHttpResponse GetFiles()
         {
-            return GetGoogleService().Client.DoHttpGetRequest("https://www.googleapis.com/drive/v3/files", new DriveGetFilesOptions());
+            var fields = string.Join(",", new string[] { GoogleDriveConstants.Fields.Kind, GoogleDriveConstants.Fields.NextPageToken, GoogleDriveConstants.Fields.Files });
+            return GetGoogleService().Client.DoHttpGetRequest("https://www.googleapis.com/drive/v3/files", new DriveGetFilesOptions() { Fields = fields });
+
+            //var settings = new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.All };
+            //var allFiles = JsonConvert.DeserializeObject<AllFiles>(response.Body, settings);
+            //return allFiles;
         }
+
+        //https://www.googleapis.com/drive/v3/files/0B3d-ObcEOIBQT0hndFNaWTZfRzg?alt=media
     }
 }

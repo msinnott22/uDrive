@@ -4,11 +4,11 @@
 
         filesResource.getFiles().then(function(response) {
             console.log(response.data);
+            $scope.driveInfo = response.data;
         });
 
         filesResource.getUserInfo().then(function (response) {
             $scope.userInfo = response.data;
-            console.log(response);
         });
     }
 );
