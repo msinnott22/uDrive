@@ -1125,7 +1125,7 @@ To manage your website, simply open the Umbraco back office and start adding con
     <key alias="help" version="7.0">Help</key>
     <key alias="forms">Forms</key>
     <key alias="analytics">Analytics</key>
-  <key alias="udrive">uDrive</key></area>
+  <key alias="udrive">uDrive</key><key alias="udrive">uDrive</key><key alias="udrive">uDrive</key><key alias="udrive">uDrive</key><key alias="udrive">uDrive</key></area>
   <area alias="help">
     <key alias="goTo">go to</key>
     <key alias="helpTopicsFor">Help topics for</key>
@@ -1608,7 +1608,7 @@ To manage your website, simply open the Umbraco back office and start adding con
     <key alias="xslt">XSLT Files</key>
     <key alias="analytics">Analytics</key>
     <key alias="users">Users</key>
-  <key alias="udrive">uDrive</key></area>
+  <key alias="udrive">uDrive</key><key alias="udrive">uDrive</key><key alias="udrive">uDrive</key><key alias="udrive">uDrive</key><key alias="udrive">uDrive</key></area>
   <area alias="update">
     <key alias="updateAvailable">New update ready</key>
     <key alias="updateDownloadText">%0% is ready, click here for download</key>
@@ -1879,4 +1879,4 @@ To manage your website, simply open the Umbraco back office and start adding con
     <key alias=""></key>
     <key alias=""></key>
     -->
-  </area></language>
+  <key alias="googleDriveForUmbraco">Google Drive for Umbraco</key><key alias="somethingWentWrong">Okay. Something went wrong.</key><key alias="informationSavedMessage"><![CDATA[Hi there %0%. We have saved your information to a config file, so Umbraco can pull stats from your Google Drive Account.<br /><br />You can now <a href='javascript:self.close();'>close this window</a>.]]></key><key alias="noAccess">Sorry you do not have access.</key><key alias="googleDriveForUmbraco">Google Drive for Umbraco</key><key alias="somethingWentWrong">Okay. Something went wrong.</key><key alias="informationSavedMessage"><![CDATA[Hi there %0%. We have saved your information to a config file, so Umbraco can pull stats from your Google Drive Account.<br /><br />You can now <a href='javascript:self.close();'>close this window</a>.]]></key><key alias="noAccess">Sorry you do not have access.</key><key alias="googleDriveForUmbraco">Google Drive for Umbraco</key><key alias="somethingWentWrong">Okay. Something went wrong.</key><key alias="informationSavedMessage"><![CDATA[Hi there %0%. We have saved your information to a config file, so Umbraco can pull stats from your Google Drive Account.<br /><br />You can now <a href='javascript:self.close();'>close this window</a>.]]></key><key alias="noAccess">Sorry you do not have access.</key><key alias="googleDriveForUmbraco">Google Drive for Umbraco</key><key alias="somethingWentWrong">Okay. Something went wrong.</key><key alias="informationSavedMessage"><![CDATA[Hi there %0%. We have saved your information to a config file, so Umbraco can pull stats from your Google Drive Account.<br /><br />You can now <a href='javascript:self.close();'>close this window</a>.]]></key><key alias="noAccess">Sorry you do not have access.</key></area></language>

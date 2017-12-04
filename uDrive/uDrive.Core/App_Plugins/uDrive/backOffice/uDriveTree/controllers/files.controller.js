@@ -4,7 +4,7 @@
 
         filesResource.getFiles().then(function(response) {
             console.log(response.data);
-            $scope.driveInfo = response.data;
+            $scope.driveInfo = response.data.Body;
         });
 
         filesResource.getUserInfo().then(function (response) {
