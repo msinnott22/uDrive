@@ -1,5 +1,5 @@
 ﻿angular.module("umbraco").controller("uDrive.SettingsController",
-    function($scope, settingsResource) {
+    function($scope, $routeParams, settingsResource, notificationService, localizationService, navigationService) {
         
         $scope.hasAuth = false;
         $scope.showAuth = true;
@@ -22,8 +22,13 @@
         $scope.save = function(settings) {
             settingsResource.save(settings).then(function(response) {
                 $scope.settings = response.data;
+
+                notificationService.success(localizationService.localize("udrive_settingsSaved"));
+
+                navigationService.syncTree({ tree: 'udriveTree', path: [-1, $routeParams.id], forceReload: true, activate: true });
             });
         }
 
+        navigationService.syncTree({ tree: 'udriveTree', path: ["-1", $routeParams.id], forceReload: false });
     }
 );

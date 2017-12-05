@@ -2,7 +2,16 @@
     <div class="umb-pane">
         <h1>{{ title }}</h1>
         
-        <pre>{{ userInfo }}</pre>
+        <div class="control-group umb-control-group">
+            <div class="controls controls-row">
+                <div>
+                    <hr />
+                    <h5><localize key="udrive_name"></localize>:  {{ userInfo.DisplayName }}</h5>
+                    <h5><localize key="udrive_emailAddress"></localize>: {{ userInfo.EmailAddress }} </h5>
+                    <img ng-src="{{ userInfo.PhotoLink }}" />
+                </div>
+            </div>
+        </div>
 
         <pre>{{ driveInfo }}</pre>
     </div>

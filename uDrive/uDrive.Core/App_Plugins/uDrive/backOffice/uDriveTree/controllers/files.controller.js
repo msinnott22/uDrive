@@ -2,9 +2,11 @@
     function ($scope, filesResource) {
         $scope.title = "Files";
 
+        $scope.userInfo = {};
+        $scope.driveData = {};
+
         filesResource.getFiles().then(function(response) {
-            console.log(response.data);
-            $scope.driveInfo = response.data.Body;
+            $scope.driveData = response.data;
         });
 
         filesResource.getUserInfo().then(function (response) {

@@ -5,6 +5,10 @@
     <key alias="somethingWentWrong">Okay. Something went wrong.</key>
     <key alias="informationSavedMessage"><![CDATA[Hi there %0%. We have saved your information to a config file, so Umbraco can pull stats from your Google Drive Account.<br /><br />You can now <a href='javascript:self.close();'>close this window</a>.]]></key>
     <key alias="noAccess">Sorry you do not have access.</key>
+    <key alias="name">Name</key>
+    <key alias="emailAddress">Email</key>
+    <key alias="settingsSaved">Settings have been saved</key>
+    <key alias="settings">Settings</key>
     <!--
     <key alias=""></key>
     <key alias=""></key>

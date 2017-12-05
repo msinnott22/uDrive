@@ -270,6 +270,8 @@
     <Compile Include="Models\Google\Client.cs" />
     <Compile Include="Models\Google\Files\File.cs" />
     <Compile Include="Models\Google\Files\AllFiles.cs" />
+    <Compile Include="Models\Google\Files\ImageMediaMetadata.cs" />
+    <Compile Include="Models\Google\Files\Location.cs" />
     <Compile Include="Models\Google\User\ExportFormats.cs" />
     <Compile Include="Models\Google\User\ImportFormats.cs" />
     <Compile Include="Models\Google\User\MaxImportSizes.cs" />
@@ -308,11 +310,12 @@
   <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
   <PropertyGroup>
     <PostBuildEvent>xcopy "$(ProjectDir)App_Plugins\*.*" "$(SolutionDir)uDrive.Site/App_Plugins" /Y /E
-xcopy "$(TargetPath)" "$(SolutionDir)../libs" /Y /E</PostBuildEvent>
+xcopy "$(TargetPath)" "$(SolutionDir)../libs" /Y /E
+xcopy "$(TargetPath)" "$(SolutionDir)uDrive.Site/bin" /Y /E</PostBuildEvent>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties BuildVersion_StartDate="2017/11/26" BuildVersion_UpdateFileVersion="True" BuildVersion_UpdateAssemblyVersion="True" BuildVersion_BuildVersioningStyle="None.None.Increment.TimeStamp" />
+      <UserProperties BuildVersion_BuildVersioningStyle="None.None.Increment.TimeStamp" BuildVersion_UpdateAssemblyVersion="True" BuildVersion_UpdateFileVersion="True" BuildVersion_StartDate="2017/11/26" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>
