@@ -11,8 +11,145 @@
                     <img ng-src="{{ userInfo.PhotoLink }}" />
                 </div>
             </div>
-        </div>
+            
+            <div class="controls controls-row">
+                <div class="row-fluid">
+                    <ul class="thumbnails" ng-repeat="file in driveInfo.files">
+                        <li class="span2">
+                            <div class="thumbnail" style="margin-right: 20px; padding: 20px;">
+                                <a class="btn-link -underline" title="{{ file.name }}">
+                                    <img ng-src="{{ file.webViewLink }}" alt="{{ file.name }}" />
+                                </a>
+                                <div style="font-weight: bold; text-align: center; margin: 20px 0 0;">
+                                    {{ file.name }}
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
-        <pre>{{ driveInfo }}</pre>
+        </div>
+        <!--<pre>{{ driveInfo }}</pre>-->
     </div>
 </div>
+
+<!--
+{
+"kind": "drive#file",
+"id": "0B3d-ObcEOIBQT0hndFNaWTZfRzg",
+"name": "IMG_3206.JPG",
+"mimeType": "image/jpeg",
+"starred": false,
+"trashed": false,
+"explicitlyTrashed": false,
+"parents": [
+"0B3d-ObcEOIBQRnNCdnRoLV9EbXc"
+],
+"spaces": [
+"drive"
+],
+"version": "4",
+"webContentLink": "https://drive.google.com/uc?id=0B3d-ObcEOIBQT0hndFNaWTZfRzg&export=download",
+"webViewLink": "https://drive.google.com/file/d/0B3d-ObcEOIBQT0hndFNaWTZfRzg/view?usp=drivesdk",
+"iconLink": "https://drive-thirdparty.googleusercontent.com/16/type/image/jpeg",
+"hasThumbnail": true,
+"thumbnailLink": "https://lh3.googleusercontent.com/6VEFm5ux_s8LmGlCWLtzxioX8YYmYyZbj_WO30xvRpiQdqwVaYBPRUwzTF9_nrYTjlCYvg=s220",
+"thumbnailVersion": "1",
+"viewedByMe": false,
+"createdTime": "2017-10-13T20:17:43.845Z",
+"modifiedTime": "2017-10-13T20:17:43.845Z",
+"modifiedByMe": false,
+"owners": [{
+"kind": "drive#user",
+"displayName": "Lindsey Meadows",
+"me": false,
+"permissionId": "05562434813800364468",
+"emailAddress": "enquiries@lindseysfemaleplumbing.co.uk"
+}
+],
+"lastModifyingUser": {
+"kind": "drive#user",
+"displayName": "Lindsey Meadows",
+"me": false,
+"permissionId": "05562434813800364468",
+"emailAddress": "enquiries@lindseysfemaleplumbing.co.uk"
+},
+"shared": true,
+"ownedByMe": false,
+"capabilities": {
+"canAddChildren": false,
+"canChangeViewersCanCopyContent": false,
+"canComment": true,
+"canCopy": true,
+"canDelete": false,
+"canDownload": true,
+"canEdit": true,
+"canListChildren": false,
+"canMoveItemIntoTeamDrive": false,
+"canReadRevisions": true,
+"canRemoveChildren": false,
+"canRename": true,
+"canShare": true,
+"canTrash": false,
+"canUntrash": false
+},
+"viewersCanCopyContent": true,
+"writersCanShare": true,
+"permissions": [{
+"kind": "drive#permission",
+"id": "05562434813800364468",
+"type": "user",
+"emailAddress": "enquiries@lindseysfemaleplumbing.co.uk",
+"role": "owner",
+"displayName": "Lindsey Meadows",
+"deleted": false
+}, {
+"kind": "drive#permission",
+"id": "09098382258207669641",
+"type": "user",
+"emailAddress": "MSinnott21@gmail.com",
+"role": "writer",
+"displayName": "Michael Sinnott",
+"photoLink": "https://lh4.googleusercontent.com/-PjIE-t3zKak/AAAAAAAAAAI/AAAAAAAAGbk/vLA7UBjvAsI/s64/photo.jpg",
+"deleted": false
+}
+],
+"permissionIds": [
+"05562434813800364468",
+"09098382258207669641"
+],
+"originalFilename": "IMG_3206.JPG",
+"fullFileExtension": "JPG",
+"fileExtension": "JPG",
+"md5Checksum": "76bf944eb57bac281fccd63a8a7d4146",
+"size": "1512524",
+"quotaBytesUsed": "0",
+"headRevisionId": "0B3d-ObcEOIBQOUhZbmp0K0RBNkhheW1nVFh4b3lIRmEzOTk4PQ",
+"imageMediaMetadata": {
+"width": 3264,
+"height": 2448,
+"rotation": 0,
+"location": {
+"latitude": 53.396141666666665,
+"longitude": -2.934225,
+"altitude": 45.81957186544342
+},
+"time": "2017:10:13 10:47:56",
+"cameraMake": "Apple",
+"cameraModel": "iPhone 5s",
+"exposureTime": 0.030303031,
+"aperture": 2.2,
+"flashUsed": false,
+"focalLength": 4.15,
+"isoSpeed": 64,
+"meteringMode": "Pattern",
+"sensor": "One-chip color area",
+"exposureMode": "Auto",
+"colorSpace": "sRGB",
+"whiteBalance": "Auto",
+"exposureBias": 0.0
+},
+"isAppAuthorized": false
+} 
+-->
