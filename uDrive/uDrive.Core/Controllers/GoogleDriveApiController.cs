@@ -31,7 +31,7 @@ namespace uDrive.Core.Controllers
         public AllFiles GetFiles()
         {
             var fields = string.Join(",", new string[] { GoogleDriveConstants.Fields.Kind, GoogleDriveConstants.Fields.NextPageToken, GoogleDriveConstants.Fields.Files });
-            var response = GetGoogleService().Client.DoHttpGetRequest("https://www.googleapis.com/drive/v3/files", new DriveGetFilesOptions() { Fields = fields, Query = "mimeType contains \"image\"" });
+            var response = GetGoogleService().Client.DoHttpGetRequest("https://www.googleapis.com/drive/v3/files", new DriveGetFilesOptions() { Fields = fields, Query = "mimeType contains \"image\" and not name contains \"FullSizeRender\"" });
             var settings = new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.All };
             var allFiles = JsonConvert.DeserializeObject<AllFiles>(response.Body, settings);
             return allFiles;
